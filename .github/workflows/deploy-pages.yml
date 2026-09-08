@@ -44,9 +44,7 @@ jobs:
 
       - name: Build static export
         run: npm run build
-        env:
-          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-
+        
       - name: Upload static site
         uses: actions/upload-pages-artifact@v5
         with:
