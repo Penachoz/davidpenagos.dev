@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { MAINTENANCE_MODE } from "@/content/site";
 
 import "./globals.css";
 
@@ -18,7 +19,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "David Penagos · Infrastructure, Cloud & DevOps",
+    default: MAINTENANCE_MODE
+      ? "En mantenimiento · David Penagos"
+      : "David Penagos · Infrastructure, Cloud & DevOps",
     template: "%s · David Penagos",
   },
   description:
@@ -49,13 +52,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang={MAINTENANCE_MODE ? "es" : "en"}
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[#0d1524] font-sans text-foreground">
-        <SiteHeader />
+        {MAINTENANCE_MODE ? null : <SiteHeader />}
         <main className="flex-1">{children}</main>
-        <SiteFooter />
+        {MAINTENANCE_MODE ? null : <SiteFooter />}
       </body>
     </html>
   );
