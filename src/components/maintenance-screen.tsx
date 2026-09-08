@@ -20,11 +20,11 @@ export function MaintenanceScreen() {
         />
 
         <h1 className="mt-8 text-[clamp(2.4rem,8vw,4.5rem)] leading-[0.92] font-semibold tracking-[-0.06em]">
-          mala mia
+          "mala mia firma"
           <span className="mt-2 block text-white/40">— David</span>
         </h1>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-white/45 sm:text-base">
-          Estoy arreglando unas cosas. Vuelvo en un rato.
+          Estoy arreglando unas cosilla q pille. Ahorita volvemos
         </p>
       </div>
     </section>
