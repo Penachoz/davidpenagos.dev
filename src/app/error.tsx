@@ -16,17 +16,16 @@ export default function ErrorPage({
   return (
     <div className="mx-auto flex min-h-[50vh] w-full max-w-lg flex-col items-center justify-center px-4 text-center">
       <p className="font-mono text-sm text-orange-300">Error</p>
-      <h1 className="mt-2 text-2xl font-semibold">No se pudo cargar esta vista</h1>
+      <h1 className="mt-2 text-2xl font-semibold">This view failed to load</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Reintenta. Si sigue fallando, abre el README en{" "}
-        <code className="rounded bg-muted px-1">github-profile/</code>.
+        Retry the page. If it keeps failing, refresh and try again.
       </p>
       <button
         type="button"
         onClick={() => reset()}
         className="mt-6 text-sm text-sky-400 hover:underline"
       >
-        Reintentar
+        Try again
       </button>
     </div>
   );
